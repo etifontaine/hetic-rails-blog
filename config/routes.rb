@@ -12,11 +12,5 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :posts do
-    collection do
-      get 'hobby'
-      get 'study'
-      get 'team'
-    end
-  end
+  resources :posts
 end

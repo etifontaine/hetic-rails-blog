@@ -1,0 +1,17 @@
+<h1>Ajout d'un nouvel article</h1>
+
+<%= form_for @post do |f| %>
+  <%= f.label 'Titre' %>
+  <br />
+  <%= f.text_field :title, placeholder: 'Insérer le titre du job' %>
+  <br />
+  <br />
+  <%= f.label 'Contenu' %>
+  <br />
+  <%= f.text_area :content, placeholder: 'Insérer le contenu de l\'article' %>
+  <br />
+  <br />
+  <%= f.hidden_field :user_id, value: 11 %>
+  <%= f.submit 'Envoyer' %>
+
+<% end %>

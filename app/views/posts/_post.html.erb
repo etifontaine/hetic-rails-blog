@@ -1,5 +1,6 @@
 <div>
   <h1><%= truncate(post.title, :length => 60) %></h1>
   <p><%= post.content %></p>
+  <p><small>by <%= post.user.username %></small></p>
   <%= link_to "Voir", post_path(post.id), class: "link" %>
 </div>
