@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :users
-
   resources :posts
+  resources :comments
 
   match '*a', :to => 'errors#routing', via: :get
 end

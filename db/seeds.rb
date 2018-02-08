@@ -43,6 +43,11 @@ def seed_comments
         user_id: rand(1..9), 
         post_id: post.id
       )
+      Comment.create(
+        content: Faker::Lorem.sentences[0], 
+        user_id: 11, 
+        post_id: post.id
+      )
     end
   end
 end
