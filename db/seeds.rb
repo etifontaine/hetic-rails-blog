@@ -18,26 +18,6 @@ def seed_users
   end
 end
 
-def seed_categories
-  hobby = ['Arts', 'Crafts', 'Sports', 'Sciences', 'Collecting', 'Reading', 'Other']
-  study = ['Arts and Humanities', 'Physical Science and Engineering', 'Math and Logic',
-          'Computer Science', 'Data Science', 'Economics and Finance', 'Business',
-          'Social Sciences', 'Language', 'Other']
-  team = ['Study', 'Development', 'Arts and Hobby', 'Other']
-
-  hobby.each do |name|
-    Category.create(branch: 'hobby', name: name)
-  end
-
-  study.each do |name|
-    Category.create(branch: 'study', name: name)
-  end
-
-  team.each do |name|
-    Category.create(branch: 'team', name: name)
-  end
-end
-
 def seed_posts
   categories = Category.all
 
@@ -53,6 +33,20 @@ def seed_posts
   end
 end
 
+def seed_comments
+  posts = Post.all
+
+  posts.each do |post|
+    5.times do
+      Comment.create(
+        content: Faker::Lorem.sentences[0], 
+        user_id: rand(1..9), 
+        post_id: post.id
+      )
+    end
+  end
+end
+
 seed_users
-seed_categories
 seed_posts
+seed_comments

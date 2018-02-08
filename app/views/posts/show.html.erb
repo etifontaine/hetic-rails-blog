@@ -1,3 +1,13 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.content %></p>
 <p>Publié par <%= @post.user.username %></p>
+<% unless @post.comments.blank? %>
+<h4>Commentaires</h4>
+  <ul>
+  <% @post.comments.each do |comment|  %>
+    <li><strong><%= comment.user.username %> : </strong><%= comment.content %></li>
+  <% end %>
+  </ul>
+<% else %>
+  No comments.
+<% end %>
