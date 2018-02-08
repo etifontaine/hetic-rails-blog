@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :users
 
   resources :posts
+
+  match '*a', :to => 'errors#routing', via: :get
 end
