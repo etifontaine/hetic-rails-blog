@@ -1,10 +1,13 @@
 <ul>
   <li><%= link_to 'Home', root_path, class: 'navbar' %></li>
+  <% if !current_user %>
+  <li><%= link_to 'S\'inscrire', new_user_registration_path, class: 'navbar' %></li>
+  <li><%= link_to 'Connexion', login_path %></li>
+  <% else %>
   <li><%= link_to 'Nouvel article', new_post_path, class: 'navbar' %></li>
   <li><%= link_to 'Articles', posts_path %></li>
   <li><%= link_to 'Utilisateurs', users_path %></li>
-  <li><%= link_to 'S\'inscrire', new_user_registration_path, class: 'navbar' %></li>
-  <li><%= link_to 'Connexion', login_path %></li>
   <li><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %></li>
+  <% end %>
 
 </ul>
