@@ -7,11 +7,13 @@
   <% @post.comments.each do |comment|  %>
     <li><strong><%= comment.user.username %> : </strong><%= comment.content %></li>
     <% if current_user.id === comment.user.id %>
-      <%= link_to "Delete", comment_path(comment.id), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
+      <%= link_to "Delete comment", comment_path(comment.id), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
     <% end %>
   <% end %>
   </ul>
 <% else %>
   No comments.
 <% end %>
-
+<% if current_user.id === @post.user.id %>
+      <%= link_to "Delete post", post_path(@post.id), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
+<% end %>

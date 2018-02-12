@@ -11,7 +11,7 @@
   <%= f.text_area :content, placeholder: 'Insérer le contenu de l\'article' %>
   <br />
   <br />
-  <%= f.hidden_field :user_id, value: 11 %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit 'Envoyer' %>
 
 <% end %>
