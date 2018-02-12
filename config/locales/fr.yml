@@ -1,0 +1,11 @@
+fr:
+  home: "Accueil"
+  register_at: "Inscrit le"
+  articles: "Les articles"
+  no_articles: "Aucun article disponible"
+  users: "Utilisateurs"
+  published_by: "Publié par"
+  comments: "Commentaire"
+  add_comment: "Ajouter un commentaire"
+  no_comments: "Aucun commentaire disponible"
+  add_article: "Ajouter un article"
