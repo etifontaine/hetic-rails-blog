@@ -1,0 +1,13 @@
+<h1>Ajout d'un nouveau commentaire</h1>
+
+<%= form_for [@comment, Comment.new] do |f| %>
+  <%= f.label 'Contenu' %>
+  <br />
+  <%= f.text_area :content, placeholder: 'Write your comment' %>
+  <br />
+  <br />
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.submit 'Envoyer' %>
+
+<% end %>

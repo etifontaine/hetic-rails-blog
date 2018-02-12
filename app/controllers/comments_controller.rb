@@ -15,13 +15,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-		@comment = Comment.new(post_params)
-      	if @comment.save
+		@comment = Comment.new(comment_params)
+    if @comment.save
 			flash[:message] = "Comment was successfully created."
-			redirect_to comments_path
-      	else
-			render action: 'new'
-		end
+    end
+		redirect_back(fallback_location: root_path)
   end
   
   def destroy
@@ -30,11 +28,7 @@ class CommentsController < ApplicationController
 
     flash[:info] = "Comment deleted" 
     
-    if params[:from]=='post'
-      redirect_to :back
-    else
-      redirect_to root_url
-    end
+		redirect_back(fallback_location: root_path)
   end
 
   private
