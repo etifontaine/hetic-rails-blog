@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
   def index
-    @posts = Post.limit(5)
+    @posts = Post.last(5).reverse
   end
 end
