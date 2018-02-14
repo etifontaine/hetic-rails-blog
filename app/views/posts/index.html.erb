@@ -1,4 +1,8 @@
-<h1><%= t "articles" %></h1>
+<main class="container">
+  <h1><%= t "articles" %></h1>
 
-<%= render @posts %>
-<%= will_paginate @posts %>
+  <div class="articles__container">
+    <%= render @posts %>
+  </div>  
+  <%= will_paginate @posts %>
+</main>

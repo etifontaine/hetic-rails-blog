@@ -1,3 +1,63 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.articles__container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.article{
+  width: 270px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  margin-bottom: 40px;
+  .article__background{
+    width: 270px;
+    height: 270px;
+    background: tomato;
+  }
+  .article__title{
+    padding: 0 20px;
+    font-family: 'Lora', sans-serif;
+    font-size: 24px;
+    height: 48px;
+    line-height: 48px;
+    font-weight: 400;
+    text-align: center;
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      width: calc(100% - 80px);
+      height: 1px;
+      bottom: 0;
+      left: 40px;
+      background: var(--main-font-color);
+    }
+  }
+  .article__description{
+    padding: 0 20px;
+    height: 72px;
+    word-wrap:break-word;
+  }
+  .article__link{
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid var(--main-font-color);
+    background: none;
+    color: var(--main-font-color);
+    width: 120px;
+    margin: 25px auto;
+    cursor: pointer;
+    transition: background .2s ease-in-out, color .2s ease-in-out;
+    outline: none;
+    &:hover{
+      background: var(--main-font-color);
+      color: #ffffff;
+    }
+  }
+}

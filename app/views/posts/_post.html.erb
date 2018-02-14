@@ -1,6 +1,7 @@
-<div>
-  <h1><%= truncate(post.title, :length => 60) %></h1>
-  <p><%= post.content %></p>
-  <p><small>by <%= post.user.username %></small></p>
-  <%= link_to "Voir", post_path(post.id), class: "link" %>
+<div class="article">
+  <div class="article__background"></div>
+  <h3 class="article__title"><%= truncate(post.title, :length => 20) %></h3>
+  <p class="article__description"><%= truncate(post.content, :length => 65) %></p>
+  <!--<p><small>by <%= post.user.username %></small></p>-->
+  <%= link_to "Lire", post_path(post.id), class: "article__link" %>
 </div>

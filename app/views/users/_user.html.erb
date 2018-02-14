@@ -1,3 +1,8 @@
-<li>
-  <%= link_to user.username, user_path(user.id), class: "link" %>
-</li>
+<div class="user">
+  <div class="user__avatar"></div>
+  <div class="user__about">
+    <div class="about__name"><%= user.username %></div>
+    <p class="about__register"><%= user.created_at %></p>
+    <%= link_to 'Voir', user_path(user.id), class: "about__link" %>  
+  </div>
+</div>

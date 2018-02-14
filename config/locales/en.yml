@@ -1,4 +1,4 @@
-fr:
+en:
   home: "Home"
   register_at: "Registered the"
   articles: "Articles"
@@ -8,13 +8,16 @@ fr:
   comments: "Comments"
   add_comment: "Add comment"
   no_comments: "No comments availables"
-  add_article: "Add article"
+  add_article: "New article"
+  add_article_subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida nunc eget massa consequat, ut volutpat lacus vehicula."
+  add_submit: "Send"
   delete_comment: "zz"
   helpers:
     placeholder:
       post:
-        title: "Title"
-        content: "Content"
+        title: "Article's Title"
+        content: "Elon Musk’s Tesla Roadster, which launched on top of SpaceX’s Falcon Heavy on Tuesday, is going farther out into the Solar System than originally planned. The car was supposed to be put on a path around the Sun..."
         submit: "Send"
       comment:
         content: "Your comment"
+        

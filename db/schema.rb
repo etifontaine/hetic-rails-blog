@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180208103639) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.string "branch"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.integer "post_id"
@@ -32,11 +25,9 @@ ActiveRecord::Schema.define(version: 20180208103639) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "category_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

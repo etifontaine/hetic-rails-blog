@@ -1,17 +1,14 @@
-<h1><%= t "add_article" %></h1>
-
-<%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <br />
-  <%= f.text_field :title, placeholder: true %>
-  <br />
-  <br />
-  <%= f.label :content %>
-  <br />
-  <%= f.text_area :content, placeholder: true %>
-  <br />
-  <br />
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit %>
-
-<% end %>
+<main class="container container-new">
+  <h1><%= t "add_article" %></h1>
+  <p class="add_subtitle">
+  <%= t "add_article_subtitle" %>
+  </p>
+  <%= form_for @post do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: true %>
+    <%= f.label :content %>
+    <%= f.text_area :content, placeholder: true %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit t('add_submit')%>
+  <% end %>
+</main>

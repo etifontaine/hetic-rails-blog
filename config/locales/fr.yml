@@ -8,4 +8,5 @@ fr:
   comments: "Commentaire"
   add_comment: "Ajouter un commentaire"
   no_comments: "Aucun commentaire disponible"
-  add_article: "Ajouter un article"
+  add_article: "Nouvel article"
+  add_article_subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida nunc eget massa consequat, ut volutpat lacus vehicula."  
