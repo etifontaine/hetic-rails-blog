@@ -4,8 +4,12 @@
 
 
 <main class="container">
+<% if @posts.count > 0 %>
   <div class="articles__container">
     <%= render @posts %>
   </div>
   <%= will_paginate @posts %>
+  <% else %>
+  <p><%= t('no_articles') %></p>
+  <% end %>
 </main>
