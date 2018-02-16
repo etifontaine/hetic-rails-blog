@@ -1,4 +1,4 @@
-<h1><%= t "add_comment" %></h1>
+<h1><%= t("add_comment") %></h1>
 
 <%= form_for [@comment, Comment.new] do |f| %>
   <%= f.label :content %>
@@ -8,6 +8,6 @@
   <br />
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :post_id, value: @post.id %>
-  <%= f.submit 'Envoyer' %>
+  <%= f.submit t("send") %>
 
 <% end %>

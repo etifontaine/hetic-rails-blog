@@ -3,11 +3,13 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:edit, :update, :show, :delete]
 
   def index
-    @users = User.all
+    @users = User.order('created_at DESC').paginate(:page => params[:page], per_page: 10)
   end
 
   def show
     @user = User.find(params[:id])
+   # @posts = @user.posts
+   @posts = @user.posts.order('created_at DESC').paginate(:page => params[:page], per_page: 6)
   end
 
   def new

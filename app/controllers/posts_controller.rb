@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :show, :delete]
 
   def index
-   # @posts = Post.all.reverse
    @posts = Post.order('created_at DESC').paginate(:page => params[:page], per_page: 6)
   end
 

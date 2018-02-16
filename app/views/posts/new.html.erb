@@ -1,7 +1,7 @@
 <main class="container container-new">
-  <h1><%= t "add_article" %></h1>
+  <h1><%= t("add_article") %></h1>
   <p class="add_subtitle">
-  <%= t "add_article_subtitle" %>
+  <%= t("add_article_subtitle") %>
   </p>
   <%= form_for @post do |f| %>
     <%= f.label :title %>
@@ -9,6 +9,6 @@
     <%= f.label :content %>
     <%= f.text_area :content, placeholder: true %>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit t('add_submit')%>
+    <%= f.submit t('send')%>
   <% end %>
 </main>

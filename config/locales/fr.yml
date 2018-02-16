@@ -1,7 +1,15 @@
 fr:
   home: "Accueil"
+  register: "S'inscrire"
+  login: "Connexion"
+  new_article: "Ajouter un article"
   register_at: "Inscrit le"
   articles: "Les articles"
+  users: "Les utilisateurs"
+  logout: "Deconnexion"
+  read: "Lire"
+  see: "Voir"
+  send: "Envoyer"
   no_articles: "Aucun article disponible"
   users: "Utilisateurs"
   published_by: "Publié par"
@@ -9,4 +17,15 @@ fr:
   add_comment: "Ajouter un commentaire"
   no_comments: "Aucun commentaire disponible"
   add_article: "Nouvel article"
-  add_article_subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida nunc eget massa consequat, ut volutpat lacus vehicula."  
+  add_article_subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida nunc eget massa consequat, ut volutpat lacus vehicula."
+  delete_post: "Supprimer l'article"
+  confirm_delete_post: "Voulez-vous vraiment supprimer cet article ?"
+  confirm_delete_comment: "Voulez-vous vraiment supprimer ce commentaire ?"
+  helpers:
+    placeholder:
+      post:
+        title: "Titre de l'article"
+        content: "Ecrivez votre article..."
+        submit: "Envoyer"
+      comment:
+        content: "Votre commentaire"
