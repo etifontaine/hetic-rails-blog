@@ -15,10 +15,10 @@
       <li><%= link_to t('logout'), destroy_user_session_path, method: :delete %></li>
       <% end %>
       <% if I18n.locale == I18n.default_locale %>
-        <li><%= link_to "English", { :locale=>'en' } %></li>
+      <li><%= link_to_unless I18n.locale == :en, "English", locale: :en %></li>
       <% else %>
-        <li><%= link_to "Français", { :locale=>'fr' } %></li>
-      <%end%>
+      <li><%= link_to_unless I18n.locale == :de, "Français", locale: :fr %></li>
+      <% end %>
     </ul>
   </nav>
 </header>
