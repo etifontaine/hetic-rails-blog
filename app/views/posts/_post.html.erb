@@ -1,8 +1,9 @@
 <div class="article">
-  <div class="article__background"></div>
+  <div class="article__background">
+    <%= image_tag post.photo.url %>
+  </div>
   <h3 class="article__title"><%= truncate(post.title, :length => 20) %></h3>
   <p class="article__description"><%= truncate(post.content, :length => 65) %></p>
   <p><small>by <%= post.user.username %></small></p>
   <%= link_to t('read'), post_path(post.id), class: "article__link" %>
-  <img  src="https://www.gravatar.com/avatar/<%= post.user.username  %>">
 </div>

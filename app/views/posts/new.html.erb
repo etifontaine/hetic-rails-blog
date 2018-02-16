@@ -3,12 +3,14 @@
   <p class="add_subtitle">
   <%= t("add_article_subtitle") %>
   </p>
-  <%= form_for @post do |f| %>
+  <%= form_for @post, html: { multipart: true } do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title, placeholder: true %>
     <%= f.label :content %>
     <%= f.text_area :content, placeholder: true %>
+    <%= f.file_field :photo %>
     <%= f.hidden_field :user_id, value: current_user.id %>
+    <br/>
     <%= f.submit t('send')%>
   <% end %>
 </main>

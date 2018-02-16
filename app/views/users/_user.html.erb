@@ -1,5 +1,8 @@
 <div class="user">
-  <div class="user__avatar"></div>
+  <div class="user__avatar">
+  
+  <%= image_tag gravatar_url(user.email, 140), alt: "" %>
+  </div>
   <div class="user__about">
     <div class="about__name"><%= user.username %></div>
     <p class="about__register"><%= time_ago_in_words(user.created_at) %></p>
