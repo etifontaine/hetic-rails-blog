@@ -1,21 +1,26 @@
-<%= image_tag @post.photo.url %>
-<h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
-<p><%= t("published_by") %> <%= @post.user.username %></p>
-<% unless @post.comments.blank? %>
-  <h4><%= t("comments") %></h4>
-  <ul>
-  <% @post.comments.each do |comment|  %>
-    <li><strong><%= comment.user.username %> : </strong><%= comment.content %></li>
-    <% if current_user.id === comment.user.id || @post.user.id === current_user.id %>
-      <%= link_to t("delete_comment"), comment_path(comment.id), method: :delete, data: { confirm: t('confirm_delete_comment') } %>
+<div class="article__background">
+  <%= image_tag @post.photo.url %>
+</div>
+  <main class="container container-article">
+  <h1><%= @post.title %></h1>
+  <p><%= @post.content %></p>
+  <p><%= t("published_by") %> <%= @post.user.username %></p>
+  <% unless @post.comments.blank? %>
+    <h2><%= t("comments") %></h2>
+    <% @post.comments.each do |comment|  %>
+      <div class="comment">
+        <strong><%= link_to comment.user.username, {controller: "users", action: "show", id: comment.user.id} %></strong>
+        <p><%= comment.content %></p>
+      <% if current_user.id === comment.user.id || @post.user.id === current_user.id %>
+        <%= link_to t("delete_comment"), comment_path(comment.id), method: :delete, data: { confirm: t('confirm_delete_comment') }, class: 'comment_delete' %>
+      <% end %>
+      </div>      
     <% end %>
+  <% else %>
+    <p><%= t("no_comments") %></p>
   <% end %>
-  </ul>
-<% else %>
-  <%= t("no_comments") %>
-<% end %>
-<%= render partial: 'comments/form', locals: { comment: @comment } %>
-<% if current_user.id === @post.user.id %>
-      <%= link_to t('delete_post'), post_path(@post.id), method: :delete, data: { confirm: t('confirm_delete_post') } %>
-<% end %>
+  <%= render partial: 'comments/form', locals: { comment: @comment } %>
+  <% if current_user.id === @post.user.id %>
+        <%= link_to t('delete_post'), post_path(@post.id), method: :delete, data: { confirm: t('confirm_delete_post') } %>
+  <% end %>
+</main>

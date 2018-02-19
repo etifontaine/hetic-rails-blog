@@ -4,6 +4,5 @@
   </div>
   <h3 class="article__title"><%= truncate(post.title, :length => 20) %></h3>
   <p class="article__description"><%= truncate(post.content, :length => 65) %></p>
-  <p><small>by <%= post.user.username %></small></p>
   <%= link_to t('read'), post_path(post.id), class: "article__link" %>
 </div>
