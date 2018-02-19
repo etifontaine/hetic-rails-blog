@@ -21,6 +21,7 @@ fr:
   delete_post: "Supprimer l'article"
   confirm_delete_post: "Voulez-vous vraiment supprimer cet article ?"
   confirm_delete_comment: "Voulez-vous vraiment supprimer ce commentaire ?"
+  delete_comment: "Supprimer le commentaire"
   helpers:
     placeholder:
       post:
